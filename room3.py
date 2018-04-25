@@ -1,0 +1,112 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'room3.ui'
+#
+# Created by: PyQt5 UI code generator 5.9
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_Room3(object):
+    def setupUi(self, Room3):
+        Room3.setObjectName("Room3")
+        Room3.resize(800, 480)
+        self.home = QtWidgets.QPushButton(Room3)
+        self.home.setGeometry(QtCore.QRect(0, 0, 141, 61))
+        self.home.setObjectName("home")
+        self.C = QtWidgets.QLabel(Room3)
+        self.C.setGeometry(QtCore.QRect(420, 110, 121, 141))
+        font = QtGui.QFont()
+        font.setPointSize(72)
+        self.C.setFont(font)
+        self.C.setObjectName("C")
+        self.binnen = QtWidgets.QLabel(Room3)
+        self.binnen.setGeometry(QtCore.QRect(10, 260, 201, 61))
+        font = QtGui.QFont()
+        font.setPointSize(48)
+        self.binnen.setFont(font)
+        self.binnen.setObjectName("binnen")
+        self.verlivht = QtWidgets.QPushButton(Room3)
+        self.verlivht.setGeometry(QtCore.QRect(550, 120, 211, 141))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.verlivht.setFont(font)
+        self.verlivht.setObjectName("verlivht")
+        self.Tbuiten = QtWidgets.QLCDNumber(Room3)
+        self.Tbuiten.setGeometry(QtCore.QRect(250, 340, 191, 121))
+        self.Tbuiten.setDigitCount(3)
+        self.Tbuiten.setObjectName("Tbuiten")
+        self.stat_verwarm = QtWidgets.QFrame(Room3)
+        self.stat_verwarm.setGeometry(QtCore.QRect(400, 10, 141, 91))
+        self.stat_verwarm.setStyleSheet("background-color: rgb(255, 0, 0);")
+        self.stat_verwarm.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.stat_verwarm.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.stat_verwarm.setObjectName("stat_verwarm")
+        self.Tbinnen = QtWidgets.QLCDNumber(Room3)
+        self.Tbinnen.setGeometry(QtCore.QRect(30, 340, 191, 121))
+        self.Tbinnen.setDigitCount(3)
+        self.Tbinnen.setObjectName("Tbinnen")
+        self.verwarming = QtWidgets.QLabel(Room3)
+        self.verwarming.setGeometry(QtCore.QRect(150, 30, 241, 41))
+        font = QtGui.QFont()
+        font.setPointSize(22)
+        self.verwarming.setFont(font)
+        self.verwarming.setObjectName("verwarming")
+        self.buiten = QtWidgets.QLabel(Room3)
+        self.buiten.setGeometry(QtCore.QRect(240, 260, 181, 61))
+        font = QtGui.QFont()
+        font.setPointSize(48)
+        self.buiten.setFont(font)
+        self.buiten.setObjectName("buiten")
+        self.temp = QtWidgets.QSpinBox(Room3)
+        self.temp.setGeometry(QtCore.QRect(210, 110, 211, 141))
+        font = QtGui.QFont()
+        font.setPointSize(48)
+        self.temp.setFont(font)
+        self.temp.setProperty("value", 20)
+        self.temp.setObjectName("temp")
+        self.verwarm = QtWidgets.QPushButton(Room3)
+        self.verwarm.setGeometry(QtCore.QRect(10, 110, 191, 141))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.verwarm.setFont(font)
+        self.verwarm.setObjectName("verwarm")
+        self.verlichting = QtWidgets.QLabel(Room3)
+        self.verlichting.setGeometry(QtCore.QRect(520, 280, 271, 41))
+        font = QtGui.QFont()
+        font.setPointSize(26)
+        self.verlichting.setFont(font)
+        self.verlichting.setObjectName("verlichting")
+        self.stat_verlicht = QtWidgets.QFrame(Room3)
+        self.stat_verlicht.setGeometry(QtCore.QRect(530, 330, 251, 131))
+        self.stat_verlicht.setStyleSheet("background-color: rgb(255, 0, 0);")
+        self.stat_verlicht.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.stat_verlicht.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.stat_verlicht.setObjectName("stat_verlicht")
+
+        self.retranslateUi(Room3)
+        QtCore.QMetaObject.connectSlotsByName(Room3)
+
+    def retranslateUi(self, Room3):
+        _translate = QtCore.QCoreApplication.translate
+        Room3.setWindowTitle(_translate("Room3", "kamer2"))
+        self.home.setText(_translate("Room3", "Return"))
+        self.C.setText(_translate("Room3", "°C"))
+        self.binnen.setText(_translate("Room3", "Binnen"))
+        self.verlivht.setText(_translate("Room3", "kamer 3 lamp"))
+        self.verwarming.setText(_translate("Room3", "status verwarming"))
+        self.buiten.setText(_translate("Room3", "Buiten"))
+        self.verwarm.setText(_translate("Room3", "kamer 3 verwarming"))
+        self.verlichting.setText(_translate("Room3", "status verlichting"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Room3 = QtWidgets.QDialog()
+    ui = Ui_Room3()
+    ui.setupUi(Room3)
+    Room3.show()
+    sys.exit(app.exec_())
+
