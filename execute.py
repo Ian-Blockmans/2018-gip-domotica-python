@@ -101,7 +101,7 @@ def temp():  # leest de temperatuur en schrijft het naar de database, verzend te
     mqttclient.publish("home/outdoor/temp", temp2)
 
 
-def on_message_verwarming(client, userdata, message):
+def on_message_verwarming(client, userdata, message): # deze functie word uitgevoert als de verwarming op de website word bediend
     mqttconn = mysql.connect(user='root', password='masta', database='gip')
     mqttc = mqttconn.cursor()
 
@@ -237,7 +237,7 @@ def bew():  # funcrie voor de bewegingssensor
             GPIO.output(led2, False)
 
 
-def on_message_living_light(client, userdata, message):
+def on_message_living_light(client, userdata, message): # word doorlopen als de website de verlichting aan zet
     mqttconn = mysql.connect(user='root', password='masta', database='gip')
     mqttc = mqttconn.cursor()
 
@@ -250,7 +250,7 @@ def on_message_living_light(client, userdata, message):
     mqttconn.close()
 
 
-def on_message_kitchen_light(client, userdata, message):
+def on_message_kitchen_light(client, userdata, message): # word doorlopen als de website de verlichting aan zet
     mqttconn = mysql.connect(user='root', password='masta', database='gip')
     mqttc = mqttconn.cursor()
 
@@ -263,7 +263,7 @@ def on_message_kitchen_light(client, userdata, message):
     mqttconn.close()
 
 
-def on_message_bedroom_light(client, userdata, message):
+def on_message_bedroom_light(client, userdata, message): # word doorlopen als de website de verlichting aan zet
     mqttconn = mysql.connect(user='root', password='masta', database='gip')
     mqttc = mqttconn.cursor()
 
@@ -286,7 +286,7 @@ def rolluikdown(rolluik_naar_beneden):  # schrijf hardwareknop voor de rolluik i
     conn.commit()
 
 
-def on_message_shutter(client, userdata, message):
+def on_message_shutter(client, userdata, message): # word doorlopen als de knoppen op de site van de rolluik worden bediend 
     mqttconn = mysql.connect(user='root', password='masta', database='gip')
     mqttc = mqttconn.cursor()
 
@@ -371,7 +371,7 @@ def handler(i):  # functie voor als het alarm getrigert wordt
 
     while 1:
         if alarm:
-            pass
+            break
         else:
             break
 
@@ -382,10 +382,6 @@ def alarm_enable():  # set interupt voor alarm
 
 def alarm_disable():  # verwijder interupt voor alarm
     GPIO.remove_event_detect(bewegingssensor)
-
-
-# def on_message(mosq, obj, msg):
-#   print(msg.topic+" "+str(msg.qos)+" "+str(msg.payload))
 
 # interupts voor hardware knoppen
 GPIO.add_event_detect(rolluik_naar_beneden, GPIO.RISING, callback=rolluikup, bouncetime=500)
@@ -437,3 +433,4 @@ while 1:  # alle functies worden doorlopen met bepaalde timing
             bew()
             rolluik()
             time.sleep(0.01)
+nyaa.is
